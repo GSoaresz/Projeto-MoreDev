@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <img class="logo" src="images/logo.png" alt="Imagem de DOE">
+    <img class="logo" src="/images/logo.png" alt="Imagem de DOE">
     <h2>A sua doação importa</h2>
 
     <p>Até 3 vidas com 1 doação</p>
@@ -22,7 +22,7 @@
   </header>
   <section class="form hide">
     <h2>Entre na lista de doadores</h2>
-    <form action="/">
+    <form action="/" method="POST">
       <input type="text" name="name" placeholder="Nome Completo">
       <input type="text" name="email" placeholder="Email">
       <input type="text" name="blood" placeholder="Tipo sanguíneo">
@@ -33,27 +33,20 @@
     <h2>Últimos <span>doadores</span></h2>
 
     <section class="donors">
-      <div class="donor">
-        <div class="blood">AB+</div>
-        <p>Diego Ferreira</p>
-      </div>
-      <div class="donor">
-        <div class="blood">B+</div>
-        <p>Cleitin Birabara</p>
-      </div>
-      <div class="donor">
-        <div class="blood">A+</div>
-        <p>Miro Gosh</p>
-      </div>
-      <div class="donor">
-        <div class="blood">O+</div>
-        <p>Maykin Dugrau</p>
-      </div>
+
+      {% for donor in donors %}
+
+        <div class="donor">
+            <div class="blood">{{donor.blood}}</div>
+            <p>{{donor.name}}</p>
+        </div>
+
+      {%endfor%}
     </section>
   </main>
   <footer> Com ❤ G.S</footer>
 
-  <script src="js/script.js" text="javascript"></script>
+  <script src="/js/script.js" text="javascript"></script>
 
 </body>
 
