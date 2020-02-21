@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-// configurar o servir para aprensentar arquivos estáticos
+// configurar o server para aprensentar arquivos estáticos
 server.use(express.static('public'));
 // habilitar body do form
 server.use(express.urlencoded({ extended: true}));
